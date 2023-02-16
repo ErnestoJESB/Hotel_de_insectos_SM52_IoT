@@ -8,10 +8,37 @@
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <ion-toolbar>
       <ion-title size="large">Inicio</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Inicio"></app-explore-container>
+  <div style="display: flex; justify-content: center; align-items: center;">
+  <ion-item>
+    <ion-avatar slot="start">
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      Hotel 1
+    </ion-label>
+    <ion-button slot="end">
+      End
+    </ion-button>
+  </ion-item>
+</div>
+
+
+<div style="display: flex; flex-direction: column; align-items: center;">
+  <p style="text-align: center;">Datos interesantes sobre catarinas</p>
+  <p style="font-style: italic; font-size: 15px;">Las catarinas hembras ponen más de un millón de huevos en toda su vida.</p>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/TPpquiQynfU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p style="text-align: center;">Datos interesantes sobre las abejas</p>
+  <p style="font-style: italic; font-size: 15px;">Las margaritas son una excelente fuente alimento para las abejas polinizadoras porque florecen casi todo el año.</p>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/8Gj8RtE3bOI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <p style="text-align: center;">Datos interesantes sobre catarinas</p>
+  <p style="font-style: italic; font-size: 15px;">Las mariposas se mimetizan para protegerse mejor de los depredadores.</p>
+  <iframe width="100%" height="315" src="https://www.youtube.com/embed/DWRj2BB8YHs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 </ion-content>
