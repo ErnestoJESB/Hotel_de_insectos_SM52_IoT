@@ -13,5 +13,54 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Monitoreo"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detector de movimiento</ion-card-title>
+      <ion-card-subtitle>Parte de arriba</ion-card-subtitle>
+    </ion-card-header>
+    <!--      <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
+    <ion-item>
+      <ion-label>Desactivar sensor</ion-label>
+      <ion-toggle id="boton" color="success" [checked]="true" (click)="presentAlert()"></ion-toggle>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detector de movimiento</ion-card-title>
+      <ion-card-subtitle>Parte de abajo</ion-card-subtitle>
+    </ion-card-header>
+    <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
+    <ion-item>
+      <ion-label>Desactivar sensor</ion-label>
+      <ion-toggle color="success" [checked]="true"></ion-toggle>
+    </ion-item>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Detector de movimiento</ion-card-title>
+      <ion-card-subtitle>Atrás</ion-card-subtitle>
+    </ion-card-header>
+    <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
+    <ion-item>
+      <ion-label>Desactivar sensor</ion-label>
+      <ion-toggle color="success" [checked]="true"></ion-toggle>
+    </ion-item>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Desactivar todos</ion-card-title>
+      <ion-card-subtitle>Atrás</ion-card-subtitle>
+    </ion-card-header>
+    <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
+    <ion-item>
+      <ion-label (click)="presentAlert()">Desactivar sensores</ion-label>
+      <ion-toggle color="success" [checked]="true"></ion-toggle>
+    </ion-item>
+  </ion-card>
+
+
+
+
 </ion-content>
