@@ -21,7 +21,7 @@
     <!--      <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
     <ion-item>
       <ion-label>Desactivar sensor</ion-label>
-      <ion-toggle id="boton" color="success" [checked]="true" (click)="presentAlert()"></ion-toggle>
+      <ion-toggle color="success" [checked]="true" (click)="onToggleChange1()"></ion-toggle>
     </ion-item>
   </ion-card>
 
@@ -33,7 +33,7 @@
     <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
     <ion-item>
       <ion-label>Desactivar sensor</ion-label>
-      <ion-toggle color="success" [checked]="true"></ion-toggle>
+      <ion-toggle color="success" [checked]="true" (click)="onToggleChange2()"></ion-toggle>
     </ion-item>
   </ion-card>
   <ion-card>
@@ -44,21 +44,20 @@
     <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
     <ion-item>
       <ion-label>Desactivar sensor</ion-label>
-      <ion-toggle color="success" [checked]="true"></ion-toggle>
+      <ion-toggle color="success" [checked]="true" (click)="onToggleChange3()"></ion-toggle>
     </ion-item>
   </ion-card>
 
-  <ion-card>
+  <!-- <ion-card>
     <ion-card-header>
       <ion-card-title>Desactivar todos</ion-card-title>
       <ion-card-subtitle>Atrás</ion-card-subtitle>
     </ion-card-header>
-    <!-- <ion-button (click)="presentAlert()">Desactivar</ion-button> -->
     <ion-item>
       <ion-label (click)="presentAlert()">Desactivar sensores</ion-label>
-      <ion-toggle color="success" [checked]="true"></ion-toggle>
+      <ion-toggle color="success" [checked]="true" (click)="onToggleChange()"></ion-toggle>
     </ion-item>
-  </ion-card>
+  </ion-card> -->
 
 
 
