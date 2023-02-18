@@ -20,7 +20,7 @@
     </ion-toolbar>
     <ion-card-subtitle style="text-align: center;">Proyecto SM52</ion-card-subtitle>
   </ion-header>
-  <div class="colorhome">
+  <!-- Inicio -->
     <ion-card>
       <img alt="Silhouette of mountains" src="/assets/icon/hotel-de-insectos-1.jpg" />
       <ion-card-header>
@@ -34,62 +34,98 @@
         viviran en nuestro Hotel.
       </ion-card-content>
     </ion-card>
+
+    <!-- separador  -->
+    <h2 style="text-align: center;">Seguridad</h2>
+    <!-- fin separador -->
+
+    <!-- Inicio de carrusel -->
+    <ion-slides pager="true" [options]="slideOpts" >
+      <ion-slide>
+        <ion-card>
+          <h3 style="text-align: center;">Implementación</h3>
+          <img src="/src/assets/icon/buendia.jpeg">
+            <ion-card-title>Seguridad Implementada</ion-card-title>
+            <ion-card-subtitle>ServoMotor/PIR</ion-card-subtitle>
+            <ion-card-content class="ion-text-left">
+              El Hotel contara con la Seguridad de un <b>ServoMotor/PIR</b>,
+              como primera seguidad el Servo funciona como defensa y el PIR
+              funcionara como detector.
+            </ion-card-content>
+        </ion-card>
+      </ion-slide>
+
+      <!-- segundo cart -->
+      <ion-slide>
+        <ion-card>
+          <h3 style="text-align: center;">Materiales</h3>
+          <img src="/assets/icon/servo.jpg">
+            <ion-card-title>ServoMotor</ion-card-title>
+            <ion-card-subtitle>Modelo: SG90</ion-card-subtitle>
+            <ion-card-content class="ion-text-left">
+            Se Implementara un <b>ServoMotor</b> el cual funcionara como
+            mecanismo de defensa contra los depredadores de insectos.
+          </ion-card-content> 
+        </ion-card>
+      </ion-slide>
+      <!-- tercer card -->
+      <ion-slide>
+        <ion-card>
+          <h3 style="text-align: center;">Materiales</h3>
+          <img src="/assets/icon/pir.jpg">
+            <ion-card-title>Sensor PIR</ion-card-title>
+            <ion-card-subtitle>Modelo: HC-SR501</ion-card-subtitle>
+            <ion-card-content class="ion-text-left">
+              Se Implementara un Sensor <b>PIR</b> por el cual sera
+              nuestro detector de Movimiento ante cualquier intruso.
+            </ion-card-content>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+    <!-- Fin de carrusel  -->
+    
     <!-- separador  -->
       <h2 style="text-align: center;">Habitantes</h2>
     <!-- fin separador -->
-    <!-- Inicio de carrusel -->
-    <ion-slides [options]="slideOpts">
+    
+    <!-- Inicio de carrusel Habitantes-->
+    <ion-slides pager="true" [options]="slideOpts" >
       <ion-slide>
         <ion-card>
           <img src="/assets/icon/abeja1.jpg">
             <ion-card-title>Abejas</ion-card-title>
-            <ion-card-subtitle>Abejas/Solitarias</ion-card-subtitle>
+            <ion-card-subtitle>Solitarias/Reinas</ion-card-subtitle>
             <ion-card-content class="ion-text-left">
               El Hotel tendra diversos insectos que ayuden al ciclo que puede tener un huerto
-              y uno de ellos son las <b>ABEJAS</b> que son las encargadas de polinizar nuestro 
+              y uno de ellos son las <b>ABEJAS</b> las encargadas de polinizar nuestro 
               huerto.
             </ion-card-content>
         </ion-card>
       </ion-slide>
+
       <!-- segundo cart -->
       <ion-slide>
         <ion-card>
-          <img src="ruta-a-imagen-2">
-          <ion-card-content>
-            <ion-card-title>Título de la imagen 2</ion-card-title>
-            <ion-card-subtitle>Descripción de la imagen 2</ion-card-subtitle>
-          </ion-card-content>
+          <img src="/assets/icon/mari.jpg">
+            <ion-card-title>Mariquita</ion-card-title>
+            <ion-card-subtitle>Rojas/Amarillas</ion-card-subtitle>
+            <ion-card-content class="ion-text-left">
+            Las mariquitas son voraces consumidores de ácaros de las plantas, 
+            populares en <b>controlar las plagas</b> de los jardines y cultivos.
+          </ion-card-content> 
         </ion-card>
       </ion-slide>
+      <!-- tercer card -->
       <ion-slide>
         <ion-card>
-          <img src="ruta-a-imagen-3">
-          <ion-card-content>
-            <ion-card-title>Título de la imagen 3</ion-card-title>
-            <ion-card-subtitle>Descripción de la imagen 3</ion-card-subtitle>
-          </ion-card-content>
+          <img src="/assets/icon/mariposa.jpg">
+            <ion-card-title>Mariposa</ion-card-title>
+            <ion-card-subtitle>Mariposas</ion-card-subtitle>
+            <ion-card-content class="ion-text-left">
+          Las mariposas colaboran en el proceso de polinización y nos brindan 
+          toda su potencia estética por otra parte aportarán su gran capacidad cazadora
+          para contribuir al control de plagas.
+          </ion-card-content> 
         </ion-card>
-      </ion-slide>   
+      </ion-slide>
     <!-- Fin de carrusel  -->
-
-    <!-- separador  -->
-      <h2 style="text-align: center;">Seguridad</h2>
-    <!-- fin separador -->
-
-    <!-- imagen de seguridad -->
-    <ion-slide>
-      <ion-card>
-        <img src="/assets/icon/abeja1.jpg">
-          <ion-card-title>Abejas</ion-card-title>
-          <ion-card-subtitle>Abejas/Solitarias</ion-card-subtitle>
-
-          <ion-card-content class="ion-text-left">
-            El Hotel tendra diversos insectos que ayuden al ciclo que puede tener un huerto
-            y uno de ellos son las <b>ABEJAS</b> que son las encargadas de polinizar nuestro 
-            huerto.
-          </ion-card-content>
-      </ion-card>
-    </ion-slide>
-    <!-- fin -->
-    
-
