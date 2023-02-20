@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { ViewChild, AfterViewInit } from '@angular/core';
+import { Chart } from 'chart.js';
 
 
 
@@ -53,5 +55,13 @@ export class Tab2Page {
     await alert.present();
   }
 
+  isModalOpen = false;
+
+  setOpen(isOpen: boolean) {
+    this.isModalOpen = isOpen;
+  }
+
+  
 }
+
 
