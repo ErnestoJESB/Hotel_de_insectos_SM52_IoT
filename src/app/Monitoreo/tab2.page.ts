@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ViewChild, AfterViewInit } from '@angular/core';
 import { Chart } from 'chart.js';
-
+import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
+  templateUrl: 'tab2.page.html', 
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
@@ -15,7 +15,16 @@ export class Tab2Page {
   isToggleChecked1:boolean=false;
   isToggleChecked2:boolean=false;
   isToggleChecked3:boolean=false;
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private dataService: RealtimeDatabaseService) {}
+
+  data: any;
+
+  ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data)
+    });
+  }
 
   onToggleChange1(){
     if(!this.isToggleChecked1){
