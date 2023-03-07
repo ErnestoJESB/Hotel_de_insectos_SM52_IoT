@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+   firebaseConfig:{
+    apiKey: "AIzaSyD_g40vfeKx2jUxb29y_baHY0F4QrN14Cc",
+    authDomain: "hotel-de-soberano-brito.firebaseapp.com",
+    databaseURL: "https://hotel-de-soberano-brito-default-rtdb.firebaseio.com",
+    projectId: "hotel-de-soberano-brito",
+    storageBucket: "hotel-de-soberano-brito.appspot.com",
+    messagingSenderId: "505693615735",
+    appId: "1:505693615735:web:e52d389efe9d4aff04b872"
+  }
 };
 
 /*

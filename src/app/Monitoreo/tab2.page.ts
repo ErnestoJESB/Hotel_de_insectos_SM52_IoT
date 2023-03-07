@@ -1,51 +1,60 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { ViewChild, AfterViewInit } from '@angular/core';
-import { Chart } from 'chart.js';
+import * as Chart from 'chart.js';
+import { RealtimeDatabaseService } from '../services/realtime-database.service';
+
 
 
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
+  templateUrl: 'tab2.page.html', 
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+  
+  public toggleValue: boolean = false;
 
   isToggleChecked1:boolean=false;
   isToggleChecked2:boolean=false;
   isToggleChecked3:boolean=false;
-  constructor(private alertController: AlertController) {}
+  constructor(private alertController: AlertController, private dataService: RealtimeDatabaseService) {}
+ 
+  handleToggleClick(){
+    this.enviardatos();
+  }
 
-  onToggleChange1(){
-    if(!this.isToggleChecked1){
-      this.presentAlert();
-      this.isToggleChecked1=true;
-    }
-    else{
-      this.isToggleChecked1=false;
-    }
+  data: any;
+  data1: any;
+
+  ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data)
+    });
+    this.dataService.leerDatos('/seguridad/estado').subscribe((data1) => {
+      this.data1 = data1;
+      this.toggleValue = this.data1; // Actualiza el valor del toggle
+  });
   }
-  onToggleChange2(){
-    if(!this.isToggleChecked2){
-      this.presentAlert();
-      this.isToggleChecked2=true;
+
+    enviardatos() {
+      if (this.data1 == false) {
+        const ruta = '/seguridad/estado';
+        const datos = true;
+        this.dataService.estado(ruta,datos);
+      }else if(this.data1 == true) {
+        const ruta = '/seguridad/estado';
+        const datos = false;
+        this.dataService.estado(ruta,datos);
+      }
     }
-    else{
-      this.isToggleChecked2=false;
-    }
-  }
-  onToggleChange3(){
-    if(!this.isToggleChecked3){
-      this.presentAlert();
-      this.isToggleChecked3=true;
-    }
-    else{
-      this.isToggleChecked3=false;
-    }
-  }
+  
+
 
   async presentAlert() {
+  if (this.toggleValue== true) {
     const alert = await this.alertController.create({
       header: 'Precaución',
       subHeader: 'Has apagado el PIR',
@@ -53,6 +62,13 @@ export class Tab2Page {
       buttons: ['OK'],
     });
     await alert.present();
+  }
+}
+
+
+  funciones(){
+    this.presentAlert();
+    this.handleToggleClick();
   }
 
   isModalOpen = false;
@@ -63,5 +79,3 @@ export class Tab2Page {
 
   
 }
-
-
