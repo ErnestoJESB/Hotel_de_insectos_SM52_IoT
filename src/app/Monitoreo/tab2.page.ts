@@ -54,6 +54,7 @@ export class Tab2Page {
 
 
   async presentAlert() {
+  if (this.toggleValue== true) {
     const alert = await this.alertController.create({
       header: 'Precaución',
       subHeader: 'Has apagado el PIR',
@@ -61,6 +62,13 @@ export class Tab2Page {
       buttons: ['OK'],
     });
     await alert.present();
+  }
+}
+
+
+  funciones(){
+    this.presentAlert();
+    this.handleToggleClick();
   }
 
   isModalOpen = false;
