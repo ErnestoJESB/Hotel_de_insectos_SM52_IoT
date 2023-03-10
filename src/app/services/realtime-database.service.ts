@@ -15,6 +15,7 @@ export class RealtimeDatabaseService {
       return this.db.object('seguridad').valueChanges();
   }
 
+
   leerDatos(ruta: string) {
     return this.db.object(ruta).valueChanges();
   }

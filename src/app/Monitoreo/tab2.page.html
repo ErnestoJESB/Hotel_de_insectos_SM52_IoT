@@ -1,10 +1,15 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="nosotros">
     <ion-title>
       Monitoreo
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<style>
+  ion-title {
+    text-align: center;
+  }
+</style>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
@@ -15,15 +20,15 @@
 
 
   <ion-toolbar>
-    <ion-title>Detector de movimiento</ion-title>
+    <ion-title>Detector de Movimiento</ion-title>
   </ion-toolbar>
 
 
   <ion-card>
-    <img alt="iguana" src="/assets/icon/img/iguana.jpg" />
+    <img alt="iguana" src="/assets/icon/seguridad.png" />
     <ion-card-header>
-      <ion-card-title>Seguridad</ion-card-title>
-      <ion-card-subtitle>Desactivar/Activar sensores</ion-card-subtitle>
+        <ion-card-title style="text-align: center;">Seguridad</ion-card-title>
+      <ion-card-subtitle style="text-align: center;">Activar/Desactivar sensores</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -44,7 +49,7 @@
       <ion-content>
         <ion-card>
           <ion-card-header>
-            <ion-card-title>Detector de movimiento</ion-card-title>
+            <ion-card-title>Detector de Movimiento</ion-card-title>
             <ion-card-subtitle>Atrás</ion-card-subtitle>
           </ion-card-header>
           <ion-item>
@@ -60,32 +65,36 @@
   </ion-toolbar>
  
   <ion-card>
-    <img alt="Temperatura" src="/assets/icon/img/termometro.jpg" />
+    <img alt="Temperatura" src="/assets/icon/baja-temperatura.png" height="180px" width="auto">
     <ion-card-header>
-      <ion-card-title>Temperatura</ion-card-title>
-      <ion-card-subtitle>Gráficas de Temperatura</ion-card-subtitle>
+      <ion-card-title style="text-align: center;">Temperatura</ion-card-title>
+      <ion-card-subtitle style="text-align: center;">Gráficas de Temperatura</ion-card-subtitle>
     </ion-card-header>
 
-
-    <ion-button id="open-modal" expand="block">Visualizar Temperatura</ion-button>
+    <ion-card-content>
+      <ion-button id="open-modal" expand="block" routerLink="/graficas" >Temperatura</ion-button>
+      <ion-button expand="block" routerLink="/graficas" >Grafica</ion-button>
+    </ion-card-content>
 
     <ion-modal #modal trigger="open-modal">
       <ng-template>
         <ion-content>
-          <ion-toolbar>
+          <ion-toolbar color="nosotros">
             <ion-title>Temperatura</ion-title>
-            <ion-buttons slot="end">
-              <ion-button color="dark" (click)="modal.dismiss()">Cerrar</ion-button>
-            </ion-buttons>
           </ion-toolbar>
             <ion-list>
               <ion-item *ngIf="data">
                 {{ data.estado }}
               </ion-item>
-            </ion-list>          
+              <div class="container">
+                <ion-buttons slot="end">
+                  <ion-button color="dark" (click)="modal.dismiss()">Cerrar</ion-button>
+                </ion-buttons>
+              </div>
+            </ion-list> 
         </ion-content>
       </ng-template>
     </ion-modal>
   </ion-card>
-  
+
 </ion-content>

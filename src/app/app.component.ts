@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor() {}
+  splash =true;
+  notificacionAudio = new Audio("../assets/audios/bee-effects.mp3");
+  constructor(
+    
+  ) {}
 }

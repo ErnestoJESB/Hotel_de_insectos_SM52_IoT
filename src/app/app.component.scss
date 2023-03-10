@@ -1,0 +1,58 @@
+#Divuperpuesto{
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    background-color: black;
+}
+// #moni{
+//     z-index: -10;
+//     position: absolute;
+//     width: 35%;
+//     top: 47%;
+//     left: 53%;
+//     animation-name: abeja;
+//     animation-duration: 9s;
+// }
+
+// @keyframes abeja{
+//     from{
+//         z-index: 99999;
+//         top:47%;
+//     }
+//     29%{
+//         z-index: 99999;
+//     }
+//     30%{
+//         transform: rotateZ(0deg);
+//         top: 27%;
+//         left: 53%;
+//     }
+//     40%{
+//         transform: rotateZ(-90deg);
+//     }
+//     50%{
+//         transform: rotateZ(-90deg);
+//         top: 27%;
+//         left: -2%;
+//     }
+//     to{
+//         transform: rotateZ(-60deg);
+//         top: 27%;
+//         left: -2%;
+//         z-index: 99999;
+//     }
+// }
+
+// #divSplash{
+//     --background:none;
+//     background: url("../assets/icon/abeja1.jpg") no-repeat center / cover;
+//     height: 100%;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
