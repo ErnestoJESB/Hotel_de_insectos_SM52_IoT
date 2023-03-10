@@ -4,15 +4,16 @@
 
 export const environment = {
   production: false,
-   firebaseConfig:{
-    apiKey: "AIzaSyD_g40vfeKx2jUxb29y_baHY0F4QrN14Cc",
-    authDomain: "hotel-de-soberano-brito.firebaseapp.com",
-    databaseURL: "https://hotel-de-soberano-brito-default-rtdb.firebaseio.com",
-    projectId: "hotel-de-soberano-brito",
-    storageBucket: "hotel-de-soberano-brito.appspot.com",
-    messagingSenderId: "505693615735",
-    appId: "1:505693615735:web:e52d389efe9d4aff04b872"
-  }
+  firebaseConfig : {
+    apiKey: "AIzaSyC-1cVK7wxT6oknKJNtym9F_dQw6UAeJYA",
+    authDomain: "hotelthiago-fb394.firebaseapp.com",
+    databaseURL: "https://hotelthiago-fb394-default-rtdb.firebaseio.com",
+    projectId: "hotelthiago-fb394",
+    storageBucket: "hotelthiago-fb394.appspot.com",
+    messagingSenderId: "577632593096",
+    appId: "1:577632593096:web:b5e5ea9fdee620fc10f1fd",
+    measurementId: "G-T7GNN1JZ89"
+  },
 };
 
 /*
