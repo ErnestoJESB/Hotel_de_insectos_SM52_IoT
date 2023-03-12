@@ -5,10 +5,19 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  },  {
+  },
+  {
     path: 'graficas',
     loadChildren: () => import('./graficas/graficas.module').then( m => m.GraficasPageModule)
-  }
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
+  // {
+  //   path: 'Monitoreo',
+  //   loadChildren: () => import('./Monitoreo/tab2.module').then( m => m.Tab2PageModule)
+  // }
 
 
 ];

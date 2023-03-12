@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Platform } from '@ionic/angular';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  splash =true;
-  notificacionAudio = new Audio("../assets/audios/bee-effects.mp3");
   constructor(
+    private platform:Platform,
+    public router:Router
     
-  ) {}
+  ) {
+    this.initializeApp()
+  }
+
+  initializeApp(){
+    this.platform.ready().then(()=>{
+      this.router.navigateByUrl('splash')
+    })
+  }
 }
