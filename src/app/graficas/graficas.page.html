@@ -1,0 +1,38 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="nosotros">
+    <ion-title>
+      Graficas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<style>
+  ion-title {
+    text-align: center;
+  }
+</style>
+
+<ion-content [fullscreen]="true">
+  <div class="ion-padding">
+    <ion-card>
+      <ion-card-header>
+        <div class="container">
+          Temperatura de cada dia
+        </div>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #doughnutCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        Temperatura de forma lineal de cada dia
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas style="position: relative; height:20vh; width:40vw"></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="container">
+    <ion-button routerLink="" style="margin: 0 auto;">Cerrar</ion-button>
+  </div>
+</ion-content>

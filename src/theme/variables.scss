@@ -76,7 +76,27 @@
   --ion-color-light-tint: #f5f6f9;
 }
 
-@media (prefers-color-scheme: dark) {
+/** Nosotros **/
+:root {
+	--ion-color-nosotros: #64c479;
+	--ion-color-nosotros-rgb: 100,196,121;
+	--ion-color-nosotros-contrast: #000000;
+	--ion-color-nosotros-contrast-rgb: 0,0,0;
+	--ion-color-nosotros-shade: #58ac6a;
+	--ion-color-nosotros-tint: #74ca86;
+}
+
+/** Nosotros  home **/
+:root {
+	--ion-color-nosotros1: #84cf94;
+	--ion-color-nosotros-rgb: 100,196,121;
+	--ion-color-nosotros-contrast: #000000;
+	--ion-color-nosotros-contrast-rgb: 0,0,0;
+	--ion-color-nosotros-shade: #58ac6a;
+	--ion-color-nosotros-tint: #74ca86;
+}
+
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
