@@ -7,12 +7,29 @@ body {
    justify-content: center;
 }
 
+img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+
 // Aquí es donde sucede la magia
 
 $offset: 187;
-$duration: 1.4s;
+$duration: 2.4s;
+
+.spinner-container {
+  margin-right: 20px;
+}
 
 .spinner {
+  position: absolute;
+
+  /* haz que esta clase se muestre en el centro */
+  top: 80%;
+  left: 40%;
+  
   animation: rotator $duration linear infinite;
 }
 
