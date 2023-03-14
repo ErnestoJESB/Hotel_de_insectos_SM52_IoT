@@ -13,10 +13,11 @@ const routes: Routes = [
   {
     path: 'Monitoreo',
     loadChildren: () => import('./Monitoreo/tab2.module').then( m => m.Tab2PageModule)
-  }
-  
-
-
+  },
+  {
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
 ];
 @NgModule({
   imports: [
