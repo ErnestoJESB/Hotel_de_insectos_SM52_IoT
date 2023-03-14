@@ -7,6 +7,7 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
 
 
 
+
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html', 
@@ -19,7 +20,11 @@ export class Tab2Page {
   isToggleChecked1:boolean=false;
   isToggleChecked2:boolean=false;
   isToggleChecked3:boolean=false;
-  constructor(private alertController: AlertController, private dataService: RealtimeDatabaseService) {}
+  constructor(
+    private alertController: AlertController, 
+    private dataService: RealtimeDatabaseService,
+    )
+     {}
  
   handleToggleClick(){
     this.enviardatos();

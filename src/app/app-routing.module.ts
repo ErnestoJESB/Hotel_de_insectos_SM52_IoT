@@ -11,13 +11,9 @@ const routes: Routes = [
     loadChildren: () => import('./graficas/graficas.module').then( m => m.GraficasPageModule)
   },
   {
-    path: 'Monitoreo',
-    loadChildren: () => import('./Monitoreo/tab2.module').then( m => m.Tab2PageModule),
-    
-  }
-  
-
-
+    path: 'splash',
+    loadChildren: () => import('./splash/splash.module').then( m => m.SplashPageModule)
+  },
 ];
 @NgModule({
   imports: [
