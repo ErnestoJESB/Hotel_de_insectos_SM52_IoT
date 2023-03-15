@@ -116,7 +116,7 @@ this.scatterChart = new Chart(this.doughnutCanvas.nativeElement, {
     this.lineChart = new Chart(this.lineCanvas.nativeElement, {
       type: 'line',
       data: {
-        labels: Object.keys(datos.historial),
+        labels: Object.keys(datos.historial).map(label => label.substring(2)),
         datasets: [
           {
             label: datos.tittle,

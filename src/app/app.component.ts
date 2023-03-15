@@ -19,6 +19,14 @@ export class AppComponent {
   initializeApp(){
     this.platform.ready().then(()=>{
       this.router.navigateByUrl('splash')
+      this.checkDarkTheme()
     })
+  }
+// verificar lo del modo oscuro si se encuentra o no activo
+  checkDarkTheme(){
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    if (prefersDark.matches) {
+      document.body.classList.toggle('dark');
+    }
   }
 }
