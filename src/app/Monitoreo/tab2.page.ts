@@ -14,6 +14,8 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
+
+  
   
   public toggleValue: boolean = false;
 
@@ -32,6 +34,7 @@ export class Tab2Page {
 
   data: any;
   data1: any;
+  data2: any;
 
   ngOnInit() {
     this.dataService.getData().subscribe(data => {
@@ -41,6 +44,10 @@ export class Tab2Page {
     this.dataService.leerDatos('/seguridad/estado').subscribe((data1) => {
       this.data1 = data1;
       this.toggleValue = this.data1; // Actualiza el valor del toggle
+  });
+this.dataService.leertemp('/seguridad/temperatura').subscribe((data2) => {
+  this.data2 = data2;
+  console.log(this.data2);
   });
   }
 
@@ -82,5 +89,11 @@ export class Tab2Page {
     this.isModalOpen = isOpen;
   }
 
+
+  /* Crea un constructor */
+  temperatura() { 
+    let templocal = this.data2;
+    console.log(templocal);
+  }
   
 }

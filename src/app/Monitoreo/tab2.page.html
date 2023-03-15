@@ -88,6 +88,9 @@
               <ion-item *ngIf="data">
                 {{ data.estado }}
               </ion-item>
+              <ion-item *ngIf="data">
+                {{ data.temperatura }}
+              </ion-item>
             </ion-list> 
         </ion-content>
       </ng-template>
@@ -104,8 +107,10 @@
           {{ data.incidencias }}
         </ion-item>
       </div>
+      
     </ion-card-header>
 
 
   </ion-card>
+
 </ion-content>
