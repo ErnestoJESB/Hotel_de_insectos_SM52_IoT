@@ -23,6 +23,10 @@ export class RealtimeDatabaseService {
     this.db.database.ref(ruta).set(datos);
   }
 
+  dia(ruta: string, datos: any) {
+    this.db.database.ref(ruta).set(datos);
+  }
+
   leertemp(ruta: string) {
     return this.db.object(ruta).valueChanges();
   }
