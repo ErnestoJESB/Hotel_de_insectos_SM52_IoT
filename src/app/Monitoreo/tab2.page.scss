@@ -26,5 +26,25 @@ ion-card {
     margin: 0 auto;
     margin-left: -40px;
 }
+.boton-incidencias {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(5, 5, 5);
+    border-radius: 5px;
+    font-size: 30px;
+    cursor: pointer;
+  }
+
+.rojo {
+    background-color: red;
+  }
+  
+  .amarillo {
+    background-color: yellow;
+  }
+  
+  .verde {
+    background-color: green;
+  }
 
 
