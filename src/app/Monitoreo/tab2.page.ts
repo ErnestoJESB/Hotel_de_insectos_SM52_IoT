@@ -14,7 +14,7 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
+  numero: number = 0;
   
   
   public toggleValue: boolean = false;
@@ -27,6 +27,9 @@ export class Tab2Page {
     private dataService: RealtimeDatabaseService,
     )
      {}
+
+     incrementarNumero() {
+      this.numero++;}
  
   handleToggleClick(){
     this.enviardatos();
@@ -95,5 +98,7 @@ this.dataService.leertemp('/seguridad/temperatura').subscribe((data2) => {
     let templocal = this.data2;
     console.log(templocal);
   }
+
+
   
 }
