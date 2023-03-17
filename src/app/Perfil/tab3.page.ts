@@ -14,6 +14,16 @@ export class Tab3Page {
 
   constructor() {}
 
+  ngOnInit(): void {
+  }
+
+  toggleCard(event: MouseEvent): void {
+    const card = (event.currentTarget as HTMLElement).parentElement;
+    card?.classList.toggle('active');
+  }
+
+
+
   toggleDetails1() {
     this.showDetails1 = !this.showDetails1;
   }
