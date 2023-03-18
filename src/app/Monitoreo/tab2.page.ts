@@ -98,6 +98,10 @@ export class Tab2Page {
           this.dataService.dia(ruta,datos);
           break;
         case 5:
+          datos = "Viernes";
+          this.dataService.dia(ruta,datos);
+          break;
+          case 6:
           datos = "Sábado";
           this.dataService.dia(ruta,datos);
           break;
