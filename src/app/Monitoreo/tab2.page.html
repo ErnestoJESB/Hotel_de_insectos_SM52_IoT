@@ -39,9 +39,6 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Movimiento</ion-title>
-          <ion-buttons slot="end">
-           <ion-button (click)="setOpen(false)">Cerrar</ion-button>
-          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -55,6 +52,11 @@
             <ion-toggle (click)="funciones()"  color="success" [checked]="toggleValue"></ion-toggle>
            </ion-item>
         </ion-card>
+<div>
+        <ion-buttons slot="end">
+          <ion-button class="boton-cerrar" (click)="setOpen(false)">Cerrar</ion-button>
+        </ion-buttons>
+      </div>           
       </ion-content>
     </ng-template>
   </ion-modal>
