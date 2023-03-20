@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <ion-header [translucent]="true">
   <ion-toolbar color="nosotros">
     <ion-title>
@@ -22,59 +23,108 @@
   </ion-header>
   <!-- persona 1 -->
   <ion-grid>
-    
-    <!-- /** persona 2 **/ -->
- 
-
-        
-   
-  
-    <div class="container">
-      <div class="card" onclick="toggleCard(this)">
-        <img src="https://scontent.fcjs3-2.fna.fbcdn.net/v/t39.30808-6/334660036_230638459398371_319142936855649193_n.jpg?stp=cp6_dst-jpg&_nc_cat=110&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeHIc0TnRoawrjLQmenh_bogMR1DfUuPe-cxHUN9S49752NLnbpdy5LiTVuUnjwm9gmbdzDBdxVuwf41TnYbYsMF&_nc_ohc=nUjN43GJSJ8AX--Fgie&_nc_ht=scontent.fcjs3-2.fna&oh=00_AfAqTGF99YkS9s8YDI0JYIKt-6asC8tADwJHJ3UBOPiEjw&oe=64190D7F"/>
-        <div class="card__content">
-          <h2>Luis Cahuich</h2>
-          <p>
-             Estudiante de la          Universidad Tecnologica de cancun.
-          </p>
-          <a href="https://github.com/CahuichG17"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
-      </div>
-      <div class="card" onclick="toggleCard(this)">
-        <img src="/assets/icon/neto.jpeg"/>
-        <div class="card__content">
-          <h2>Ernesto Soberano</h2>
-          <p>
-            Estudiante de la          Universidad Tecnologica de cancun.
-         </p>
-          <a href="https://github.com/ErnestoJESB"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
-      </div>
-      <div class="card" onclick="toggleCard(this)"> 
-        <img src="/assets/icon/buendia.jpeg"/>
-        <div class="card__content">
-          <h2>Kevin Campos</h2>
-          <p>
-            Estudiante de la          Universidad Tecnologica de cancun.
-         </p>
-          <a href="https://github.com/AlphaSKC"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
-      </div>
-      <div class="card" onclick="toggleCard(this)"> 
-        <img src="/assets/thiago.jpg"/>
-        <div class="card__content">
-          <h2>Thiago Ramirez</h2>
-          <p>
-            Estudiante de la          Universidad Tecnologica de cancun.
-         </p>
-          <a href="https://github.com/Thiago2309"><i class="fa fa-github" style="font-size:36px"></i></a>
-        </div>
-      </div>
-    </div>
-  
-
-
-    <!-- /** persona 3 **/ -->
-    
+    <ion-card (click)="toggleDetails1()">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src="/assets/icon/luis.jpeg" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="8" class="ion-align-items-center ion-justify-content-center">
+            <ion-label>
+              Luis Enrique
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="showDetails1">
+          <ion-col>
+            <ion-label>
+              Mi nombre es Luis Enrique Cahuich Torres
+              tengo 22 años y soy estudiante de ingenieria
+              en la carrera de Desarrollo de Software Multiplataforma en la UT Campús Cancún
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <!-- /* persona 2 */ -->
+    <ion-card (click)="toggleDetails2()">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src="/assets/icon/buendia.jpeg" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="8" class="ion-align-items-center ion-justify-content-center">
+            <ion-label>
+              Kevin
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="showDetails2">
+          <ion-col>
+            <ion-label>
+              Mi nombre es Kevin Campos Buendia
+              tengo 19 años y soy estudiante de ingenieria
+              en la carrera de Desarrollo de Software Multiplataforma en la UT Campús Cancún
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <!-- /* persona 3 */ -->
+    <ion-card (click)="toggleDetails3()">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src="/assets/thiago.jpg" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="8" class="ion-align-items-center ion-justify-content-center">
+            <ion-label>
+              Thiago
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="showDetails3">
+          <ion-col>
+            <ion-label>
+              Mi nombre es Thiago Ramirez Soberano
+              tengo 19 años y soy estudiante de ingenieria
+              en la carrera de Desarrollo de Software Multiplataforma en la UT Campús Cancún
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+    <!-- /* persona 4 */ -->
+    <ion-card (click)="toggleDetails4()">
+      <ion-card-content>
+        <ion-row>
+          <ion-col size="4">
+            <ion-avatar>
+              <img alt="Silhouette of a person's head" src="/assets/icon/neto.jpeg" />
+            </ion-avatar>
+          </ion-col>
+          <ion-col size="8" class="ion-align-items-center ion-justify-content-center">
+            <ion-label>
+              Ernesto
+            </ion-label>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="showDetails4">
+          <ion-col>
+            <ion-label>
+              Mi nombre es Jose Ernesto Soberano Brito
+              tengo 19 años y soy estudiante de ingenieria
+              en la carrera de Desarrollo de Software Multiplataforma en la UT Campús Cancún
+            </ion-label>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
   </ion-grid>
 </ion-content>
