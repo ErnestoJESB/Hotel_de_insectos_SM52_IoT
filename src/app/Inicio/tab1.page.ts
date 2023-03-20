@@ -31,7 +31,7 @@
 // }
 
 import { Component, OnInit } from '@angular/core';
-import { TemperaturaService } from '../services/temperatura.service';
+import { RealtimeDatabaseService } from '../services/realtime-database.service';
 import { Directive, ElementRef, Renderer2 } from '@angular/core';
 
 @Directive({
@@ -82,7 +82,7 @@ export class Tab1Page {
   };
   
   
-  constructor(private dataService: TemperaturaService,) {
+  constructor(private dataService: RealtimeDatabaseService,) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     this.darkMode = prefersDark.matches;
 
@@ -90,9 +90,8 @@ export class Tab1Page {
 
   data: any;
   ngOnInit() {
-    this.dataService.leertemp('/seguridad/temperatura').subscribe((data) => {
+    this.dataService.leertemp('/seguridad_2').subscribe((data) => {
       this.data = data;
-      console.log(this.data);
       });
   }
 
