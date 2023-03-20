@@ -26,5 +26,33 @@ ion-card {
     margin: 0 auto;
     margin-left: -40px;
 }
+.boton-incidencias {
+    display: inline-block;
+    padding: 10px 20px;
+    color: rgb(5, 5, 5);
+    border-radius: 5px;
+    font-size: 30px;
+    cursor: pointer;
+  }
 
+.rojo {
+    background-color: red;
+  }
+  
+  .amarillo {
+    background-color: yellow;
+  }
+  
+  .verde {
+    background-color: green;
+  }
 
+/* Estilos para el botón de cerrar */
+.boton-cerrar {
+    display: block;
+    margin: 0 auto;
+    background-color: #0d6efd;;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    border-radius: 5px;
+  }

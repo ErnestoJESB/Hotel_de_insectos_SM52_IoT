@@ -14,7 +14,7 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
+  numero: number = 0;
   
   
   public toggleValue: boolean = false;
@@ -27,6 +27,9 @@ export class Tab2Page {
     private dataService: RealtimeDatabaseService,
     )
      {}
+
+     incrementarNumero() {
+      this.numero++;}
  
   handleToggleClick(){
     this.enviardatos();
@@ -98,6 +101,10 @@ export class Tab2Page {
           this.dataService.dia(ruta,datos);
           break;
         case 5:
+          datos = "Viernes";
+          this.dataService.dia(ruta,datos);
+          break;
+          case 6:
           datos = "Sábado";
           this.dataService.dia(ruta,datos);
           break;
@@ -160,5 +167,7 @@ export class Tab2Page {
     let date: Date = new Date();
     console.log("Date = " + date);
   }
+
+
   
 }

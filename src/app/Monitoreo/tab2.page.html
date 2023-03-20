@@ -39,9 +39,6 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Movimiento</ion-title>
-          <ion-buttons slot="end">
-           <ion-button (click)="setOpen(false)">Cerrar</ion-button>
-          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content>
@@ -55,6 +52,11 @@
             <ion-toggle (click)="funciones()"  color="success" [checked]="toggleValue"></ion-toggle>
            </ion-item>
         </ion-card>
+<div>
+        <ion-buttons slot="end">
+          <ion-button class="boton-cerrar" (click)="setOpen(false)">Cerrar</ion-button>
+        </ion-buttons>
+      </div>           
       </ion-content>
     </ng-template>
   </ion-modal>
@@ -98,19 +100,24 @@
   </ion-card>
 
   <ion-card>
-    <img alt="iguana" src="/assets/icon/incidencias.png" />
+    <div class="image-container">
+      <div>
+        <img alt="iguana" src="/assets/icon/inci.webp" height="150px" width="auto">
+      </div>
+    </div>
     <ion-card-header>
         <ion-card-title style="text-align: center;">Incidencias</ion-card-title>
       <ion-card-subtitle style="text-align: center;">Monitoreo de incidencias</ion-card-subtitle>
+      <br>
       <div style="text-align: center;">
-        <ion-item *ngIf="data">
-          {{ data.incidencias }}
-        </ion-item>
+        <div class="boton-incidencias" [ngClass]="{
+          'rojo': data.incidencias > 50,
+          'amarillo': data.incidencias >= 30 && data.incidencias <= 50,
+          'verde': data.incidencias < 30
+        }"> {{ data.incidencias }}
+        </div>
       </div>
       
     </ion-card-header>
-
-
   </ion-card>
-
 </ion-content>

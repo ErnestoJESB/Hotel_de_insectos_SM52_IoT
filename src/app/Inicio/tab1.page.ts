@@ -30,7 +30,25 @@
 //   };
 // }
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RealtimeDatabaseService } from '../services/realtime-database.service';
+import { Directive, ElementRef, Renderer2 } from '@angular/core';
+
+@Directive({
+  selector: '[changeColor]'
+})
+export class ChangeColorDirective {
+  constructor(private elRef: ElementRef, private renderer: Renderer2) {
+    const backgroundColor = window.getComputedStyle(elRef.nativeElement).getPropertyValue('background-color');
+    const svg = elRef.nativeElement.querySelector('svg');
+    if (backgroundColor === 'rgb(255, 255, 255)') {
+      renderer.setAttribute(svg, 'stroke', '#000000');
+    } else {
+      renderer.setAttribute(svg, 'stroke', '#ffffff');
+    }
+  }
+}
+
 
 @Component({
   selector: 'app-tab1',
@@ -38,6 +56,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+
+  fondoNegro = true;
+  cambiarColor() {
+    this.fondoNegro = !this.fondoNegro;
+  }
 
   darkMode: boolean = true;
   modo: string = 'Modo Oscuro';
@@ -59,9 +82,25 @@ export class Tab1Page {
   };
   
   
-  constructor() {
+  constructor(private dataService: RealtimeDatabaseService,) {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
     this.darkMode = prefersDark.matches;
+
+  }
+
+  data: any;
+  data1: any;
+  data2: any;
+
+  ngOnInit() {
+    this.dataService.getData().subscribe(data => {
+      this.data = data;
+      console.log(this.data)
+    });
+    this.dataService.leertemp('/seguridad/temperatura').subscribe((data2) => {
+      this.data2 = data2;
+      console.log(this.data2);
+      });
   }
 
   cambio(){
@@ -74,5 +113,17 @@ export class Tab1Page {
       this.modo = 'Modo Claro';
     }
   }
+
+  cambioicon(){
+    // const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+    this.darkMode =!this.darkMode;
+    document.body.classList.toggle('dark');
+    if (this.darkMode) {
+      this.modo = 'Modo Oscuro';
+    } else {
+      this.modo = 'Modo Claro';
+    }
+  }
+  
 }
 
