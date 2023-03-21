@@ -12,7 +12,7 @@ export class RealtimeDatabaseService {
   constructor(private db: AngularFireDatabase, private http: HttpClient) {
    }
     getData(){
-      return this.db.object('seguridad').valueChanges();
+      return this.db.object('seguridad_2').valueChanges();
   }
   
 

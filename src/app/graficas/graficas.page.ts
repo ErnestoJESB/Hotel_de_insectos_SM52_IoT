@@ -9,6 +9,7 @@ import { RealtimeDatabaseService } from '../services/realtime-database.service';
   templateUrl: './graficas.page.html',
   styleUrls: ['./graficas.page.scss'],
 })
+
 export class GraficasPage implements OnInit, AfterViewInit {
   // Importing ViewChild. We need @ViewChild decorator to get a reference to the local variable 
   // that we have added to the canvas element in the HTML template.
@@ -28,7 +29,7 @@ export class GraficasPage implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    this.dataService.getData().subscribe(data => {
+    this.dataService.leerDatos('/seguridad_2').subscribe(data => {
       this.data = data;
       this.lineChartMethod();
       this.scatterChartMethod();
@@ -44,37 +45,29 @@ export class GraficasPage implements OnInit, AfterViewInit {
   }
   scatterChartMethod() {
     if (this.scatterChart) {
-      console.log('algo-|', this.chart)
       this.scatterChart.destroy(); // Elimina la instancia anterior
     }
 
-    
-let datos = this.data.historial_temperatura;
-
-this.scatterChart = new Chart(this.doughnutCanvas.nativeElement, {
-  type: 'scatter',
-  data: {
-    labels: Object.keys(datos.historialH),
-    datasets: [{
-      label: datos.tittle,
-      data: Object.values(datos.historialH).map((y, i) => ({x: i, y})),
-      backgroundColor: 'rgba(255, 159, 64, 0.2)',
-      borderColor: 'rgba(255, 159, 64, 1)',
-      borderWidth: 1,
-      pointBackgroundColor: 'rgba(255, 159, 64, 1)',
-      pointBorderColor: '#fff',
-      pointBorderWidth: 1,
-      pointRadius: 5,
-      pointHoverRadius: 8
-    }],
-
-
-    
-  },
-
-  options: {}
-  
-});
+    let datos = this.data.historial_temperatura;
+    this.scatterChart = new Chart(this.doughnutCanvas.nativeElement, {
+      type: 'scatter',
+      data: {
+        labels: Object.keys(datos.historialH),
+        datasets: [{
+          label: datos.tittle,
+          data: Object.values(datos.historialH).map((y, i) => ({x: i, y})),
+          backgroundColor: 'rgba(255, 159, 64, 0.2)',
+          borderColor: 'rgba(255, 159, 64, 1)',
+          borderWidth: 1,
+          pointBackgroundColor: 'rgba(255, 159, 64, 1)',
+          pointBorderColor: '#fff',
+          pointBorderWidth: 1,
+          pointRadius: 5,
+          pointHoverRadius: 8
+        }],
+      },
+      options: {}
+    });
 
   //   let datos = this.data.historial_temperatura
   //   this.scatterChart = new Chart(this.scatterCanvas.nativeElement, {
